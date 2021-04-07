@@ -1,0 +1,10 @@
+[package]
+name = "everytime"
+version = "0.1.0"
+authors = ["Sab Natarajan <sab.natarajan@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+chrono = "0.4.19"
+chrono-tz = "0.5.3"
+structopt = "0.3.21"
