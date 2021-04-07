@@ -22,4 +22,5 @@ $ et parse 1617767254    # parses an epoch timestamp
 
 # To-Do
 - [ ] Display the time across common timezones
+- [ ] Match timezones better (Letter-casing, city-only matching)
 - [ ] Handle micro/nano-seconds while parsing
