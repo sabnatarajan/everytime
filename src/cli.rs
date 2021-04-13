@@ -41,13 +41,10 @@ fn now(tz: Option<String>, epoch: bool) -> String {
 }
 
 fn parse(parse_str: String) {
-    // let millis = 1000000000000000000000000999;
     let parse_millis: Result<i64, _> = parse_str.parse();
     match parse_millis {
         Ok(millis) => {
-            // let nsecs = (millis / 10000000000) as u32;
             let nsecs = 0;
-            // let millis = millis >> 3;
             let ndt = NaiveDateTime::from_timestamp(millis, nsecs);
             let ldt = Local.from_utc_datetime(&ndt).to_rfc3339();
             println!("{}", ldt);
