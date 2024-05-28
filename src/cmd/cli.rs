@@ -1,5 +1,6 @@
 use chrono_tz::Tz;
 use clap::Parser;
+use clap_complete::shells;
 
 #[derive(clap::Args, Debug)]
 pub struct PrintNowOptions {
@@ -62,5 +63,12 @@ pub enum Command {
     Parse {
         /// The timestamp (in milliseconds) to parse
         parse_str: String,
+    },
+
+    /// Generate completions
+    #[command(name = "completions")]
+    Completions {
+        /// The shell to generate completions for
+        shell: shells::Shell,
     },
 }
