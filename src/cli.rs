@@ -1,8 +1,8 @@
 use chrono::{DateTime, Local};
 use chrono_tz::Tz;
-use structopt::StructOpt;
+use clap::Parser;
 
-#[derive(Debug, StructOpt)]
+#[derive(Debug, Parser)]
 enum Everytime {
     /// Display the current time at a timezone
     Now {
@@ -10,7 +10,7 @@ enum Everytime {
         tz: Option<String>,
 
         /// Display as time since the Unix Epoch
-        #[structopt(short)]
+        #[arg(short)]
         epoch: bool,
     },
     /// Parse a timestamp to the current local time
@@ -63,7 +63,7 @@ fn parse(timestamp: String) {
 }
 
 pub fn execute() {
-    let args = Everytime::from_args();
+    let args = Everytime::parse();
 
     match args {
         Everytime::Now { tz, epoch } => println!("{}", now(tz, epoch)),
