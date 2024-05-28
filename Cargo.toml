@@ -1,15 +1,15 @@
 [package]
 name = "everytime"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Sab Natarajan <sab.natarajan@gmail.com>"]
-edition = "2018"
+edition = "2021"
 license = "MIT"
 description = "et is a command line program to work with dates and times"
 
 [dependencies]
-chrono = "0.4.19"
-chrono-tz = "0.5.3"
-structopt = "0.3.21"
+chrono = "0.4.38"
+chrono-tz = { version = "0.9.0", features = ["case-insensitive"] }
+structopt = "0.3.26"
 
 [[bin]]
 name = "et"
