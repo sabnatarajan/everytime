@@ -1,3 +1,4 @@
+use chrono_tz::Tz;
 use clap::Parser;
 
 #[derive(clap::Args, Debug)]
@@ -10,15 +11,24 @@ pub struct PrintNowOptions {
     pub as_str: bool,
 }
 
+impl Default for PrintNowOptions {
+    fn default() -> Self {
+        Self {
+            tz: Some(Tz::UTC.to_string()),
+            as_str: false,
+        }
+    }
+}
+
 #[derive(Debug, Parser)]
 #[command(name = "et", about = "Work with datetimes")]
 pub struct Cli {
     #[command(subcommand)]
-    pub command: Commands,
+    pub command: Option<Command>,
 }
 
 #[derive(clap::Subcommand, Debug)]
-pub enum Commands {
+pub enum Command {
     /// Display the current time at a timezone
     #[command(name = "secs")]
     PrintSecs {

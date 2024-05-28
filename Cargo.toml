@@ -1,6 +1,6 @@
 [package]
 name = "everytime"
-version = "0.4.0"
+version = "0.4.1"
 authors = ["Sab Natarajan <sab.natarajan@gmail.com>"]
 edition = "2021"
 license = "MIT"
