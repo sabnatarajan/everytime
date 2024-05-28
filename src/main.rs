@@ -1,5 +1,4 @@
-mod cli;
-
+mod cmd;
 fn main() {
-    cli::execute();
+    cmd::execute()
 }
